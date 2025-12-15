@@ -3,6 +3,7 @@
 #Assignment: Semester Project 1
 
 import random
+
 #import time
 
 #Due to weird time travelling circumstances beyond explanation, you find yourself in 2018 or so
@@ -126,31 +127,24 @@ else:
 #If the d20 rolled to attack is an unmodified ("natural") 20, the attack automatically hits and
 #the character deals double damage. If the d20 rolled to attack is an unmodified ("natural") 1,
 #the attack automatically misses
-heroattackdice = random.randint(1,20)
-if HeroDice > Enemy_Dice:
-    thing3 = int(input("Hero, enter [0] to roll your dice to attack: "))
-    heroattack = heroattackdice + partyDict["Shadowheart"]["AtkMod"]
-    if thing3 == 0:
-        print("Hero rolled a " + str(heroattackdice))
-    if heroattack  >= enemyDict["Mindflayer"]["AC"]:
-        Attack = partyDict["Shadowheart"]["Damage"] - enemyDict["Mindflayer"]["HP"]
-        print("Hero attacks " + str(partyDict["Shadowheart"]["Damage"]),"Damage from the enemy, enemy has " + str(enemyDict["Mindflayer"]["HP"]),("HP remaining"))
-
-        if heroattack >= enemyDict["Mindflayer"]["AC"]:
-            thing4 = int(input("Enemy's turn now, enter [4] to roll your dice: "))
-            if thing4 == 4:
-                enemyattackdice2 = random.randint(18, 20)
-                enemyattack = enemyattackdice2 + enemyDict["Mindflayer"]["AtkMod"]
-                print("Enemy rolled a " + str(enemyattackdice2))
-                if enemyattack >= partyDict["Shadowheart"]["AC"]:
-                    print("Enemy attacks " + str(enemyDict["Mindflayer"]["Damage"]),"Damage from the hero, hero has " + str(partyDict["Shadowheart"]["HP"]),("HP remaining"))
-                if enemyattack >= partyDict["Shadowheart"]["AC"]:
-                    thing5 = int(input("Hero's turn now, enter [5] to roll your dice: "))
-                    if thing5 == 5:
-                        heroattackdice3 = random.randint(18, 20)
-                        heroattack2 = heroattackdice3 + partyDict["Shadowheart"]["AtkMod"]
-                        print("Hero rolled a " + str(heroattackdice3))
-                        if heroattack2 >= enemyDict["Mindflayer"]["AC"]:
-                            print("Hero attacks " + str(partyDict["Shadowheart"]["Damage"]),
-                                  "Damage from the enemy, enemy has " + str(partyDict["Shadowheart"]["HP"]),
-                                  ("HP remaining"))
+Heroattackdice = random.randint(1,20)
+Enemyattackdice = random.randint(1,20)
+while HeroDice >= Enemy_Dice:
+    heronewdice = random.randint(1,20)
+    enemynewdice = random.randint(1,20)
+    int(input(" enter [0] to roll your dice: "))
+    if thing1 == 0:
+        print("Hero rolled a " + str(heronewdice))
+    if Heroattackdice + (partyDict["Shadowheart"]["AtkMod"]) >= (enemyDict["Mindflayer"]["AC"]):
+        print("Hero attacks " + str(partyDict["Shadowheart"]["Damage"]),
+                          "Damage from the enemy, enemy has " + str(partyDict["Shadowheart"]["HP"]),
+                          ("HP remaining"),("Enemy's turn now"))
+        print("press [0] to roll ")
+        if enemynewdice >= HeroDice:
+            print("Enemy rolled " + str(enemynewdice))
+            if enemynewdice + (enemyDict["Mindflayer"]["AtkMod"]) > partyDict["Shadowheart"]["AC"]:
+               this right here print("Hero attacks " + str(partyDict["Shadowheart"]["Damage"]),)
+    if Heroattackdice + (partyDict["Shadowheart"]["AtkMod"]) < (enemyDict["Mindflayer"]["AC"]):
+        print("Hero misses, enemy's turn now, press [0], to roll your dice ")
+        if thing1 == 0:
+            print("Enemy rolled a " + str(enemynewdice))
