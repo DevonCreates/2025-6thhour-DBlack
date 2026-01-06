@@ -44,3 +44,22 @@ print(sixth_hour_class["Student_3"]["Name"])
 #10. Use the pop function to remove one of the nested dictionaries inside and print the full dictionary from #8.
 sixth_hour_class.pop("Student_3")
 print(sixth_hour_class)
+if heroattack >= enemyDict["Mindflayer"]["AC"]:
+    thing4 = int(input("Enemy's turn now, enter [4] to roll your dice: "))
+    if thing4 == 4:
+        enemyattackdice2 = random.randint(18, 20)
+        enemyattack = enemyattackdice2 + enemyDict["Mindflayer"]["AtkMod"]
+        print("Enemy rolled a " + str(enemyattackdice2))
+        if enemyattack >= partyDict["Shadowheart"]["AC"]:
+            print("Enemy attacks " + str(enemyDict["Mindflayer"]["Damage"]),
+                  "Damage from the hero, hero has " + str(partyDict["Shadowheart"]["HP"]), ("HP remaining"))
+        if enemyattack >= partyDict["Shadowheart"]["AC"]:
+            thing5 = int(input("Hero's turn now, enter [5] to roll your dice: "))
+            if thing5 == 5:
+                heroattackdice3 = random.randint(18, 20)
+                heroattack2 = heroattackdice3 + partyDict["Shadowheart"]["AtkMod"]
+                print("Hero rolled a " + str(heroattackdice3))
+                if heroattack2 >= enemyDict["Mindflayer"]["AC"]:
+                    print("Hero attacks " + str(partyDict["Shadowheart"]["Damage"]),
+                          "Damage from the enemy, enemy has " + str(partyDict["Shadowheart"]["HP"]),
+                          ("HP remaining"))

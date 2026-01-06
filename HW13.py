@@ -21,3 +21,13 @@ while num <= 100:
         print("Buzz")
     else:
         print(num)
+enemy_attack_dice = random.randint(1,20)
+while Enemy_Dice > Hero_Dice:
+    thing4 = int(input("Enemy, enter [0] to roll your dice to attack: "))
+    enemy_attack = enemy_attack_dice + enemyDict["Mindflayer"]["AtkMod"]
+    if thing4 == 0:
+        print("Enemy rolled a " + str(enemy_attack_dice))
+    if enemy_attack > partyDict["Shadowheart"]["AC"]:
+        Attack = partyDict["Shadowheart"]["Damage"] - enemyDict["Mindflayer"]["HP"]
+        print("Enemy attacks " + str(partyDict["Shadowheart"]["Damage"]))
+    if enemy_attack_dice < enemyDict["Mindflayer"]["AC"]:

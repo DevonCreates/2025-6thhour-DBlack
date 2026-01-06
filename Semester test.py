@@ -161,9 +161,9 @@ while Enemy_Dice >= HeroDice:
                           "Damage from the Hero, Hero has ", + herohealth,
                           ("HP remaining"),("Hero's turn now"))
         print("press [0] to roll ")
-        if heronewdice >= HeroDice:
-            print("Enemy rolled " + str(enemynewdice))
-            if heronewdice + (partyDict["Shadowheart"]["AtkMod"]) > enemyDict["Mindflayer"]["AC"]:
+        if heronewdice1 >= HeroDice:
+            print("Enemy rolled " + str(enemynewdice1))
+            if heronewdice1 + (partyDict["Shadowheart"]["AtkMod"]) > enemyDict["Mindflayer"]["AC"]:
                print("Hero attacks " + str(partyDict["Shadowheart"]["Damage"]),)
     if Heroattackdice + (partyDict["Shadowheart"]["AtkMod"]) < (enemyDict["Mindflayer"]["AC"]):
         print("Hero misses, enemy's turn now, press [0], to roll your dice ")

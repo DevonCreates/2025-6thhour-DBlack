@@ -45,3 +45,15 @@ while z <= 6:
 ask = int(input("Enter 0 to quit"))
 while ask != 0:
     ask = int(input("Enter 0 to quit"))
+    if thing1 == 0:
+        print("Hero rolled a " + str(Hero_Dice))
+    else:
+        break
+    if thing2 == 0:
+        print("Enemy rolled a " + str(Enemy_Dice))
+    if Hero_Dice > Enemy_Dice:
+        print("Hero goes first")
+    elif Enemy_Dice > Hero_Dice:
+        print("Enemy goes first")
+    else:
+        print("Hero goes first")

@@ -25,3 +25,13 @@ if Temp_var < 10:
     print("it's cold")
 #Print "Thank you!" and end the code
 print("Thank you!")
+HeroDice > Enemy_Dice:
+thing3 = int(input("Hero, enter [0] to roll your dice to attack: "))
+heroattack = heroattackdice + partyDict["Shadowheart"]["AtkMod"]
+if thing3 == 0:
+    print("Hero rolled a " + str(heroattackdice))
+if heroattack >= enemyDict["Mindflayer"]["AC"]:
+    Attack = partyDict["Shadowheart"]["Damage"] - enemyDict["Mindflayer"]["HP"]
+    print("Hero attacks " + str(partyDict["Shadowheart"]["Damage"]),
+          "Damage from the enemy, enemy has " + str(enemyDict["Mindflayer"]["HP"]), ("HP remaining"))
+

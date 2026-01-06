@@ -57,3 +57,9 @@ for i in range(1,somthing+1):
     num *= i
 
 print(num)
+if heroattackdice == 20:
+    print("Hero rolled a natural 20, hero deals double damage")
+    if heroattackdice == 1:
+        print("Hero rolled a natural 1, hero misses")
+if heroattackdice < enemyDict["Mindflayer"]["AC"]:
+    print("Enemy attacks now")

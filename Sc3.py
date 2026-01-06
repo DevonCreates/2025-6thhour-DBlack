@@ -20,3 +20,7 @@ for i in range(number_of_players):
         m += g
 
 print(m / number_of_players)
+if Hero_Dice > Enemy_Dice:
+        print(thing3)
+        if Enemy_Dice > Hero_Dice:
+            print(thing4)
